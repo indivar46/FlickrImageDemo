@@ -14,12 +14,12 @@ import UIKit
 extension ImageVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photoData.count
+        return imgVwModal.photoData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath as IndexPath) as? ImageCell
-        let modal = self.photoData[indexPath.row]
+        let modal = self.imgVwModal.photoData[indexPath.row]
         cell?.photoModal = modal
         return cell!
     }
@@ -53,19 +53,17 @@ extension ImageVC: UISearchBarDelegate
                let validation = SearchValidations()
                let result = validation.validate(request: request)
         if result.isValid == true {
-            sendRequestToServer(request)
-            photoData.removeAll()
+            calllApiRequest(searchText: searchBar.text!, pageNo: pageNo)
+            imgVwModal.photoData.removeAll()
             searchBar.resignFirstResponder()
 
         }
         else
         {
-            let alert = UIAlertController(title: "Sorry", message: result.message, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+          
+            self.alert(message: result.message ?? "", title: "Sorry")
 
         }
-
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -75,10 +73,15 @@ extension ImageVC: UISearchBarDelegate
                 searchBar.resignFirstResponder()
 
             }
-
-
         }
     }
+    
+    func alert(message: String, title: String = "") {
+           let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+           let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+           alertController.addAction(OKAction)
+           self.present(alertController, animated: true, completion: nil)
+       }
 }
 
 //MARK: Extension to show spinner during api cal

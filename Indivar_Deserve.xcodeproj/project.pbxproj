@@ -27,6 +27,7 @@
 		289D98EB264FCD7100E189B7 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289D98E9264FCD7100E189B7 /* ImageCell.swift */; };
 		289D98EC264FCD7100E189B7 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 289D98EA264FCD7100E189B7 /* ImageCell.xib */; };
 		289D98F2264FCF4300E189B7 /* ImageVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289D98F1264FCF4300E189B7 /* ImageVCExtension.swift */; };
+		28AC7708265E227D00A93BFD /* ImageViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AC7707265E227D00A93BFD /* ImageViewModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		289D98E9264FCD7100E189B7 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		289D98EA264FCD7100E189B7 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		289D98F1264FCF4300E189B7 /* ImageVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVCExtension.swift; sourceTree = "<group>"; };
+		28AC7707265E227D00A93BFD /* ImageViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				289D98EE264FCED600E189B7 /* Extensions */,
 				289D98EF264FCEF000E189B7 /* Controller */,
 				289D98ED264FCEC400E189B7 /* Model */,
+				28AC7706265E225300A93BFD /* ViewModal */,
 				2893B6D82653B61C003BD66C /* View */,
 				289D98B7264FC31900E189B7 /* AppDelegate.swift */,
 				289D98B9264FC31900E189B7 /* SceneDelegate.swift */,
@@ -242,6 +245,14 @@
 				289D98EA264FCD7100E189B7 /* ImageCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		28AC7706265E225300A93BFD /* ViewModal */ = {
+			isa = PBXGroup;
+			children = (
+				28AC7707265E227D00A93BFD /* ImageViewModal.swift */,
+			);
+			path = ViewModal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +393,7 @@
 				28750B392650FA6200D1666A /* CacheImageView.swift in Sources */,
 				289D98BC264FC31900E189B7 /* ImageVC.swift in Sources */,
 				28750B302650185E00D1666A /* NetworkConfig.swift in Sources */,
+				28AC7708265E227D00A93BFD /* ImageViewModal.swift in Sources */,
 				289D98EB264FCD7100E189B7 /* ImageCell.swift in Sources */,
 				289D98B8264FC31900E189B7 /* AppDelegate.swift in Sources */,
 				28750B3C2651842F00D1666A /* SearchValidations.swift in Sources */,

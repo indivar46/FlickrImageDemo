@@ -9,7 +9,6 @@
 import UIKit
 
 class ImageCell: UICollectionViewCell {
-    
     @IBOutlet weak var imgPhoto: CacheImaggeView!
     
     //MARK: Set Image on collectionView Cell

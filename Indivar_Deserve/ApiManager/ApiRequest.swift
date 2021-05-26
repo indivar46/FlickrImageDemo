@@ -14,8 +14,7 @@ var config = NetworkConfig()
 struct ApiRequest {
     
     func fetchImages(request: SearchRequest,completionHandler: @escaping (ImageDataResponse?) -> ()) {
-        let urlRequest = generateLoginUrlRequest(request: request)
-        print(urlRequest)
+        let urlRequest = generateImageUrlRequest(request: request)
         URLSession.shared.dataTask(with: urlRequest)  { (data, response, error) in 
             if(error == nil && data != nil)
             {
@@ -33,7 +32,7 @@ struct ApiRequest {
         
     }
     
-    private func generateLoginUrlRequest(request: SearchRequest) -> URLRequest{
+    private func generateImageUrlRequest(request: SearchRequest) -> URLRequest{
         let urlRequest = URLRequest(url: URL(string: "\(config.apiurl)&api_key=\(config.apiKey)&tags=\(request.searchText)&page=\(request.pageNo)")!)
         return urlRequest
     }
